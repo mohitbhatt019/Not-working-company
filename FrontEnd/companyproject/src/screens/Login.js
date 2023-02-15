@@ -40,6 +40,8 @@ function Login() {
     axios.post("https://localhost:7077/api/Authenticate/Login",loginForm).then((d)=>{
 
       if(d){
+        //** */
+        localStorage.setItem("currentUser",d.data.userData)
         alert("user Logged in");
       }else{
         alert("login failed")}
